@@ -1,5 +1,4 @@
-
-#Molecule to atoms
+# Molecule to atoms
 
 For a given chemical formula represented by a string, count the number of atoms of each element contained in the molecule and return an object (associative array in PHP, Dictionary<string, int> in C#, Map<String,Integer> in Java).
 
