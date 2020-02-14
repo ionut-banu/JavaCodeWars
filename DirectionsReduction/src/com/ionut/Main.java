@@ -3,6 +3,6 @@ package com.ionut;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        DirReduction.dirReduc(new String[]{"EAST", "EAST", "WEST", "NORTH", "WEST", "EAST", "EAST", "SOUTH", "NORTH", "WEST"});
     }
 }
