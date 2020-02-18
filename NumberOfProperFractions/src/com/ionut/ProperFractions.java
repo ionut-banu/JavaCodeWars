@@ -13,7 +13,7 @@ public class ProperFractions {
             boolean prop = true;
             for (int j = 0; j < divList.size(); j++) {
                 long div = divList.get(j);
-                if (div > 17 && i >= div && i % div == 0) {
+                if (i >= div && i % div == 0) {
                     prop = false;
                     break;
                 }
