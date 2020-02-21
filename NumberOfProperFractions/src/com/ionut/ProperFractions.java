@@ -1,33 +1,36 @@
 package com.ionut;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ProperFractions {
     public static long properFractions(long n) {
         System.out.println(n);
         if (n == 1) return 0;
-        int count = 0;
-        List<Long> divList = getDiv(n);
-        for (long i = 1; i < n; i++) {
-            boolean prop = true;
-            for (int j = 0; j < divList.size(); j++) {
-                long div = divList.get(j);
-                if (i >= div && i % div == 0) {
-                    prop = false;
-                    break;
+        if (isPrime(n)) return n - 1;
+        long product = n;
+        if (isPrime(n)) return n - 1;
+        for(int i = 2; i <= Math.sqrt(n); i++){
+            if(n % i == 0) {
+                do {
+                    n = n / i;
+                }while(n % i == 0);
+                if (isPrime(i)) {
+                    product = Math.round(product * (1 - 1.0 / i));
                 }
             }
-            if (prop) count++;
         }
-        return count;
+
+        if (n != 1) {
+
+            product = Math.round(product * (1 - 1.0 / n));
+        }
+        return product;
+
     }
 
-    private static List<Long> getDiv(long n) {
-        List<Long> list = new ArrayList<>();
-        for (long i = 2; i <= n / 2; i++) {
-            if (n % i == 0) list.add(i);
+    private static boolean isPrime(long n){
+        for(int i = 2; i*i<=n; i++){
+            if(n % i == 0) return false;
         }
-        return list;
+        return true;
     }
+
 }
