@@ -2,12 +2,19 @@ package com.ionut;
 
 public class BF {
 
+    int[][] field;
     public BF(int[][] field) {
-        // your code here!
+        this.field = field;
     }
 
     public boolean validate() {
-        // your code here too!
+        int row = field.length;
+        int col = field[0].length;
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                
+            }
+        }
         return false;
     }
 }
